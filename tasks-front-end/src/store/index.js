@@ -1,18 +1,14 @@
+import { configureStore } from "@reduxjs/toolkit";
 import { compose } from "redux";
-import { createBrowserHistory } from "history";
-// import { routerMiddleware } from "react-router-redux";
+import { createLogger } from "redux-logger";
 import createSagaMiddleware from "redux-saga";
+import { loadState } from "./localStorage";
 import rootReducer from "./rootReducer";
 import rootSaga from "./sagas/sagas";
-import { createLogger } from "redux-logger";
-import { loadState } from "./localStorage";
-import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 
 const devMode = process.env.NODE_ENV === "development";
 
-// export const history = createBrowserHistory();
 const sagaMiddleware = createSagaMiddleware();
-// const routeMiddleware = routerMiddleware(history);
 const loggerMiddleware = createLogger({
   predicate: () => process.env.NODE_ENV === "development",
 });

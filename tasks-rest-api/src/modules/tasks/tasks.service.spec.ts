@@ -101,6 +101,7 @@ describe('[service] TaskService', () => {
       const createDTO: CreateTaskDTO = {
         title: 'some title',
         description: 'some description',
+        status: TaskStatus.OPEN,
       }
 
       const task = await tasksService.createTask(createDTO, user)
