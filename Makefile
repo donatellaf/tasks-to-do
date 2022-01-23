@@ -21,11 +21,14 @@ node_modules:
 	cd tasks-rest-api && yarn cache clean --force
 	cd tasks-rest-api && yarn install
 
-watch:
+start-front:
 	$(call log, "Starting dev server")
 
 	@echo "Starting front-end server"
 	cd tasks-front-end && npm start 
+
+start-back:
+	$(call log, "Starting dev server")
 
 	@echo "Starting back-end server"
 	cd tasks-rest-api && yarn start:dev 
@@ -35,6 +38,7 @@ watch:
 rules := \
 	infra \
 	node_modules \
-	watch \
+	start-front \
+	start-back \
 
 .PHONY: $(rules)
