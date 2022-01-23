@@ -1,0 +1,22 @@
+{
+  "name": "Nest Rest Api",
+  "keywords": ["node", "nest", "typescript"],
+  "env": {
+    "NODE_ENV": {
+      "description": "We want to run the app in production mode.",
+      "value": "production"
+    },
+    "YARN_PRODUCTION": {
+      "description": "We want to keep dev dependencies.",
+      "value": "false"
+    },
+    "JWT_EXPIRES": {
+      "value": "3600"
+    },
+    "JWT_SECRET": {
+      "description": "A secret key for generating safe passwords.",
+      "generator": "secret"
+    }
+  },
+  "addons": ["heroku-postgresql"]
+}

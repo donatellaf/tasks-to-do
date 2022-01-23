@@ -1,0 +1,62 @@
+node_modules
+.vscode
+# front-end
+
+# dependencies
+tasks-front-end/node_modules
+tasks-front-end/.pnp
+tasks-front-end/.pnp.js
+
+# testing
+tasks-front-end/coverage
+
+# production
+tasks-front-end/build
+
+# misc
+tasks-front-end/.DS_Store
+tasks-front-end/.env.local
+tasks-front-end/.env.development.local
+tasks-front-end/.env.test.local
+tasks-front-end/.env.production.local
+
+tasks-front-end/npm-debug.log*
+tasks-front-end/yarn-debug.log*
+tasks-front-end/yarn-error.log*
+
+#back-end
+
+# compiled output
+tasks-rest/api/dist
+tasks-rest/api/node_modules
+
+# Logs
+tasks-rest/api/logs
+tasks-rest/api/*.log
+tasks-rest/api/npm-debug.log*
+tasks-rest/api/yarn-debug.log*
+tasks-rest/api/yarn-error.log*
+tasks-rest/api/lerna-debug.log*
+
+# OS
+tasks-rest/api/.DS_Store
+
+# Tests
+tasks-rest/api/coverage
+tasks-rest/api/.nyc_output
+
+# IDEs and editors
+tasks-rest/api/.idea
+tasks-rest/api/.project
+tasks-rest/api/.classpath
+tasks-rest/api/.c9/
+tasks-rest/api/*.launch
+tasks-rest/api/.settings/
+tasks-rest/api/*.sublime-workspace
+
+# IDE - VSCode
+tasks-rest/api/.vscode/*
+tasks-rest/api/!.vscode/settings.json
+tasks-rest/api/!.vscode/tasks.json
+tasks-rest/api/!.vscode/launch.json
+tasks-rest/api/!.vscode/extensions.json
