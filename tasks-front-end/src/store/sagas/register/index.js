@@ -1,13 +1,21 @@
-import { takeEvery, call } from "redux-saga/effects";
+import { takeEvery, call, put } from "redux-saga/effects";
 import { registerUser } from "../../api/auth/RegisterService";
 import { registerRequest } from "../../slices/register/register";
+import { getApiGeneralProblem } from "../../../utils/apiGeneralProblem";
+import { showNotificator } from "../../slices/shared/shared";
 
 function* registerWorker(action) {
   try {
     console.log("action", action);
-    yield call(registerUser, action.payload);
+    const register = yield call(registerUser, action.payload);
+    if (register.length !== 0) action.payload.onSuccess();
   } catch (error) {
-    console.log(error);
+    yield put(
+      showNotificator({
+        message: getApiGeneralProblem(error.response.data),
+        severity: "error",
+      })
+    );
   }
 }
 

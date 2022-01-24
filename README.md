@@ -11,7 +11,7 @@
 
 ### Login
 
-- register a user to login, example:
+- create a new user to login, example:
   - user : admin
   - password : Ensolvers1@
 

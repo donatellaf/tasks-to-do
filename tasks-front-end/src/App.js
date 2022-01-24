@@ -3,6 +3,8 @@ import configureStore from "./store";
 import throttle from "lodash/throttle";
 import { saveState } from "./store/localStorage";
 import { Provider } from "react-redux";
+import { SnackbarProvider } from "notistack";
+import Notificator from "./container/notificator/Notificator";
 
 export const store = configureStore();
 
@@ -18,7 +20,16 @@ store.subscribe(
 function App() {
   return (
     <Provider store={store}>
-      <AppRouter />
+      <SnackbarProvider
+        maxSnack={3}
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+      >
+        <Notificator />
+        <AppRouter />
+      </SnackbarProvider>
     </Provider>
   );
 }

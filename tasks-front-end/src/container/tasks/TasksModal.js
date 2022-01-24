@@ -36,7 +36,7 @@ const TasksModal = ({ openModal, setOpenModal, initialValues, onSave }) => {
         <Box sx={style}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
-              <Typography>
+              <Typography sx={{ fontWeight: "bold" }}>
                 Editing Task "{initialValues?.description}"
               </Typography>
             </Grid>
@@ -52,12 +52,12 @@ const TasksModal = ({ openModal, setOpenModal, initialValues, onSave }) => {
           </Grid>
           <Grid container spacing={2} justifyContent="flex-end" mt={1}>
             <Grid item xs={4}>
-              <BaseButton fullWidth title="Guardar" type="submit" />
+              <BaseButton fullWidth title="Save" type="submit" />
             </Grid>
             <Grid item xs={4}>
               <BaseButton
                 fullWidth
-                title="Cancelar"
+                title="Cancel"
                 variant="outlined"
                 onClick={() => setOpenModal(false)}
               />

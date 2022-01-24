@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { tasksRequestData } from "../../store/slices/tasks/tasks";
@@ -24,6 +24,9 @@ const Tasks = () => {
 
   return (
     <Box>
+      <Typography mt="15px" sx={{ fontWeight: "bold" }}>
+        To-Do List
+      </Typography>
       <TasksList handleUpdateTask={handleUpdateTask} />
       <TasksCreate />
       <TasksModal

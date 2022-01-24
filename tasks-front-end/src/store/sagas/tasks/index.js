@@ -8,7 +8,6 @@ import {
   tasksRequestUpdateDescription,
 } from "../../slices/tasks/tasks";
 import { getCollection, patch, post, remove } from "../../api/admin/index";
-import { Navigate } from "react-router-dom";
 
 function* getCollectionWorker(action) {
   try {

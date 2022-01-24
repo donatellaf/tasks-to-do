@@ -12,12 +12,13 @@ import Typography from "@mui/material/Typography";
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
 import { Container } from "@mui/material";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logoutRequest } from "../../store/slices/login/login";
 
 export default function MiniDrawer({ children }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { username } = useSelector((state) => state.loginReducer);
 
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -40,8 +41,12 @@ export default function MiniDrawer({ children }) {
       <CssBaseline />
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Taks To do List
+          <Typography
+            variant="overline"
+            component="div"
+            sx={{ flexGrow: 1, fontWeight: "bold" }}
+          >
+            {username}
           </Typography>
           <div>
             <IconButton

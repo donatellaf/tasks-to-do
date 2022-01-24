@@ -1,6 +1,8 @@
 import { call, put, takeEvery } from "redux-saga/effects";
 import { getUser } from "../../api/auth/LoginService";
 import { loginRequest, loginSuccess } from "../../slices/login/login";
+import { getApiGeneralProblem } from "../../../utils/apiGeneralProblem";
+import { showNotificator } from "../../slices/shared/shared";
 
 function* loginWorker(action) {
   try {
@@ -9,7 +11,12 @@ function* loginWorker(action) {
       yield put(loginSuccess(user.data.accessToken));
     }
   } catch (error) {
-    console.log(error);
+    yield put(
+      showNotificator({
+        message: getApiGeneralProblem(error.response.data),
+        severity: "error",
+      })
+    );
   }
 }
 

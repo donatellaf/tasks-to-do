@@ -18,8 +18,9 @@ const Register = () => {
   const navigate = useNavigate();
 
   const handleRegister = async (e) => {
+    e.preventDefault();
+    formValues.onSuccess = () => navigate("./login");
     dispatch(registerRequest(formValues));
-    navigate("./login");
   };
 
   return (
