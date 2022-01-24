@@ -6,7 +6,6 @@ import { showNotificator } from "../../slices/shared/shared";
 
 function* registerWorker(action) {
   try {
-    console.log("action", action);
     const register = yield call(registerUser, action.payload);
     if (register.length !== 0) action.payload.onSuccess();
   } catch (error) {
